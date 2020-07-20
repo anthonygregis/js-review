@@ -93,12 +93,32 @@ headerTwo.setAttribute('class', 'header-two')
 headerTwo.classList.remove('header-two')
 ```
 
-#### DOM Event Listeners
+### DOM Event Listeners
 
 ##### DOM Event Listener (On clicking the DOM element)
 ```javascript
 headerTwo.addEventListener('click', () => {
     headerTwo.textContent = "Anthony"
+})
+```
+
+### Complex DOM Event
+
+Loops through an array to create multiple DOM elements (list items) and adds them to an unordered list that gets appended to the div container on clicking the third header
+
+```javascript
+const list = document.createElement('ul')
+
+friends.forEach(friend => {
+    const listItem = document.createElement('li')
+
+    listItem.textContent = friend
+
+    list.appendChild(listItem)
+})
+
+headerThree.addEventListener('click', () => {
+    container.appendChild(list)
 })
 ```
 

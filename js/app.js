@@ -70,3 +70,22 @@ headerTwo.addEventListener('click', () => {
     headerTwo.textContent = "Anthony"
 })
 
+const headerThree = document.createElement('h2');
+headerThree.textContent = "Friends"
+
+container.appendChild(headerThree)
+console.log(headerThree)
+
+const list = document.createElement('ul')
+
+friends.forEach(friend => {
+    const listItem = document.createElement('li')
+
+    listItem.textContent = friend
+
+    list.appendChild(listItem)
+})
+
+headerThree.addEventListener('click', () => {
+    container.appendChild(list)
+})
