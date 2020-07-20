@@ -37,3 +37,26 @@ let neuralink = {
     }
 }
 ```
+
+## Examples of Functions
+
+##### Standard Function
+```javascript
+function addNumbers(num1, num2) {
+    return num1 + num2
+}
+```
+
+##### Function Expression
+```javascript
+const multiplyNumbers = function(num1, num2) {
+    return num1 * num2
+}
+```
+
+##### Arrow Function
+```javascript
+const subtractNumbers = (num1, num2) => {
+    return num1 - num2
+}
+```

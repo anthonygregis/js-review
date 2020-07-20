@@ -19,6 +19,15 @@ let neuralink = {
 console.log(age)
 console.log(isCool)
 console.log(friends)
-console.log(neuralink)
+// console.log(neuralink)
 console.log(neuralink.ceo)
 console.log(neuralink.generalInfo())
+
+const printFriends = (array) => {
+    array.forEach(friend => {
+        console.log(friend)
+    })
+}
+
+// printFriends(friends)
+
