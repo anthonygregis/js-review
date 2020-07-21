@@ -8,8 +8,16 @@
 // isInside(['pete', 'adam', 'taylor'], 'fred'); // => false
 
 function isInside(array, ele) {
-    
+    let indexArray = array.indexOf(ele)
+
+    if(indexArray != -1) {
+        return true
+    } else {
+        return false
+    }
 }
+
+console.log(isInside(["this", "is", "an", "array"], "array"))
 
 //console.log(isInside(['taylor', 'rome', 'pete'], 'rome'))
 
@@ -61,7 +69,7 @@ function everyOtherWord(sentence) {
         otherWordCounter++
 
         if(otherWordCounter % 2 == 0) { 
-            console.log("Everything is awesome")
+            //console.log("Everything is awesome")
         } else {
             otherWordArray.push(sentenceArray[i])
         }       
@@ -70,7 +78,7 @@ function everyOtherWord(sentence) {
     return otherWordArray
 }
 
-console.log(everyOtherWord("This should work I think"))
+//console.log(everyOtherWord("This should work I think"))
 
 // Write a function `wordYeller(sentence)` that takes in a sentence string as
 // input. It should return the sentence where every word has an exclamation
