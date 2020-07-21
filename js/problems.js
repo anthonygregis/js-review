@@ -30,26 +30,56 @@ console.log(isInside(["this", "is", "an", "array"], "array"))
 // reverseStr('General Assembly'); //=> 'ylbmessA lareneG'
 
 function reverseStr(str) {
-    
+    return str.split("").reverse().join("")
 }
 
-//console.log(reverseStr("General Assembly"));
+console.log(reverseStr("General Assembly"));
+
+// Write a function `luckySevens(max)` that returns an array of all numbers up
+// to max (inclusive) that are divisible by 7.
+//
+// Examples:
+//
+// luckySevens(25); // => [ 7, 14, 21 ]
+// luckySevens(42); // => [ 7, 14, 21, 28, 35, 42 ]
+
+function luckySevens(max) {
+    let luckyArray = []
+
+    for (let i = 1; i <= max; i++) {
+        if(i % 7 == 0) {
+            luckyArray.push(i)
+        }
+    }
+
+    return luckyArray
+}
+
+console.log(luckySevens(52))
 
 // Write a function `copyMachine(element, num)` that takes in an element and a number
 // it should return an array of length `num` that is filled with `element`.
 //
 // Examples:
 //
-// copyMachine('candy', 0); // => []
 // copyMachine('candy', 2); // => [ 'candy', 'candy' ]
-// copyMachine('bread', 4); // => [ 'bread', 'bread', 'bread', 'bread' ]
-// copyMachine(11, 6); // => [ 11, 11, 11, 11, 11, 11 ]
+
 
 function copyMachine(element, num) {
-    
+    let newArray = []
+    let i = 1;
+
+    while(i <= num) {
+        newArray.push(element)
+
+        i++
+    }
+
+    return newArray
 }
 
-//console.log(copyMachine('candy', 3))
+//copyMachine('candy', 2)
+console.log(copyMachine('candy', 3))
 
 // Write a function `everyOtherWord(sentence)` that takes in a sentence and returns
 // an array containing every other word in that sentence.
@@ -60,25 +90,23 @@ function copyMachine(element, num) {
 // everyOtherWord('the weather is wonderful'); // => [ 'the', 'is' ]
 
 function everyOtherWord(sentence) {
-    let sentenceArray = sentence.split(" ")
 
-    let otherWordArray = []
-    let otherWordCounter = 0;
+    let splitSentence = sentence.split(" ")
 
-    for(let i = 0; i < sentenceArray.length; i++) {
-        otherWordCounter++
+    let everyOtherWordArray = []
 
-        if(otherWordCounter % 2 == 0) { 
-            //console.log("Everything is awesome")
-        } else {
-            otherWordArray.push(sentenceArray[i])
-        }       
+    for(let i = 0; i < splitSentence.length; i++) {
+
+        if (!(i % 2)) {
+            everyOtherWordArray.push(splitSentence[i])
+        }
+
     }
 
-    return otherWordArray
+    return everyOtherWordArray
 }
 
-//console.log(everyOtherWord("This should work I think"))
+console.log(everyOtherWord("This should work I think"))
 
 // Write a function `wordYeller(sentence)` that takes in a sentence string as
 // input. It should return the sentence where every word has an exclamation
@@ -95,5 +123,30 @@ function everyOtherWord(sentence) {
 // wordYeller(words) === "Go! to! the! store! and! grab! the! following: milk, bread, run, and! cake!"; // => true
 
 function wordYeller(sentence) {
+    let splitSentence = sentence.split(" ")
+
+    let newLoudSentenceArray = []
+
+    splitSentence.forEach(function(word) {
+        let lengthOfWord = word.length - 1
+        
+        let lastCharInWord = word[lengthOfWord]  
+
+        if (lastCharInWord === "!" || lastCharInWord === "," || lastCharInWord === "." || lastCharInWord === "?") {
+            newLoudSentenceArray.push(word) 
+        } else {
+            let loudWord = word + "!"
+
+            //console.log(loudWord)
+
+            newLoudSentenceArray.push(loudWord) 
+        }
+    })
+
+    let newLoundSentence = newLoudSentenceArray.join(" ")
+
+    return newLoundSentence
 
 }
+
+console.log(wordYeller("This, is? a string! you. think pal"))
