@@ -122,3 +122,22 @@ headerThree.addEventListener('click', () => {
 })
 ```
 
+## Extra Useful Snippets
+
+### Array Iterators
+
+##### .forEach iterator
+
+```javascript
+words.forEach(element => {
+        let subStringFound = element.includes(str)
+
+        subStringArray.push(subStringFound)
+})
+```
+
+##### .reverse iterator
+
+```javascript
+str.split("").reverse().join("")
+```
