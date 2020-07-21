@@ -89,3 +89,6 @@ friends.forEach(friend => {
 headerThree.addEventListener('click', () => {
     container.appendChild(list)
 })
+
+// Problem Solving
+
